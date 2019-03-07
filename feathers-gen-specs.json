@@ -1,0 +1,41 @@
+{
+  "options": {
+    "ver": "1.0.0",
+    "inspectConflicts": false,
+    "semicolons": true,
+    "freeze": [],
+    "ts": true
+  },
+  "app": {
+    "environmentsAllowingSeedData": "",
+    "seedData": false,
+    "name": "json-schema",
+    "description": "Project json-schema",
+    "src": "src",
+    "packager": "npm@>= 3.0.0",
+    "providers": [
+      "rest",
+      "socketio"
+    ]
+  },
+  "services": {
+    "repo": {
+      "name": "repo",
+      "nameSingular": "corepos",
+      "subFolder": "",
+      "fileName": "repo",
+      "adapter": "mongoose",
+      "path": "/repo",
+      "isAuthEntity": false,
+      "graphql": true
+    }
+  },
+  "hooks": {},
+  "connections": {
+    "mongoose": {
+      "database": "mongodb",
+      "adapter": "mongoose",
+      "connectionString": "mongodb://localhost:27017/json_schema"
+    }
+  }
+}
