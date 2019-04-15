@@ -11,11 +11,6 @@ const DataTypes = (Sequelize as any).DataTypes as Sequelize.DataTypes;
 let moduleExports = merge({},
   // !<DEFAULT> code: sequelize_model
   {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    },
     name: {
       type: DataTypes.TEXT,
       allowNull: false

@@ -18,11 +18,12 @@ let base = merge({},
     title: "SecondTest",
     description: "SecondTest database.",
     required: [
+      "_id",
       "name"
     ],
     uniqueItemProperties: [],
     properties: {
-      id: {
+      _id: {
         type: ID
       },
       name: {

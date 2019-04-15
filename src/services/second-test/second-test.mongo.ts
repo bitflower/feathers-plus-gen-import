@@ -19,6 +19,7 @@ let moduleExports = merge({},
       }
     },
     required: [
+      "_id",
       "name"
     ]
   },

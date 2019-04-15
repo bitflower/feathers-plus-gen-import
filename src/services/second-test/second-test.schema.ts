@@ -1,7 +1,9 @@
 
 // Define the Feathers schema for service `secondTest`. (Can be re-generated.)
-// !code: imports // !end
-// !code: init // !end
+// !code: imports
+// !end
+// !code: init
+// !end
 
 // Define the model using JSON-schema
 let schema = {
@@ -14,6 +16,7 @@ let schema = {
   // Required fields.
   required: [
     // !code: schema_required
+    '_id',
     'name'
     // !end
   ],
@@ -25,8 +28,12 @@ let schema = {
   // Fields in the model.
   properties: {
     // !code: schema_properties
-    id: { type: 'ID' },
-    name: {}
+    _id: {
+      type: 'ID'
+    },
+    name: {
+      type: 'string'
+    }
     // !end
   },
   // !code: schema_more // !end
@@ -39,7 +46,7 @@ let extensions = {
     // !code: graphql_header
     name: 'SecondTest',
     service: {
-      sort: { _id: 1 },
+      sort: { _id: 1 }
     },
     // sql: {
     //   sqlTable: 'SecondTest',
