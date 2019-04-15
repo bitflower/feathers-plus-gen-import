@@ -28,6 +28,16 @@
       "path": "/repo",
       "isAuthEntity": false,
       "graphql": true
+    },
+    "secondTest": {
+      "name": "secondTest",
+      "nameSingular": "secondTest",
+      "subFolder": "",
+      "fileName": "second-test",
+      "adapter": "mongoose",
+      "path": "/second-test",
+      "isAuthEntity": false,
+      "graphql": false
     }
   },
   "hooks": {},

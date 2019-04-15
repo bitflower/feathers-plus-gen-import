@@ -2,6 +2,7 @@
 // Application interface. (Can be re-generated.)
 import { Application } from '@feathersjs/express';
 import { Corepos } from './services/repo/repo.interface';
+import { SecondTest } from './services/second-test/second-test.interface';
 // !code: imports // !end
 // !code: init // !end
 
@@ -19,6 +20,7 @@ import { Corepos } from './services/repo/repo.interface';
  */
 export type App = Application<{
   'repo': Corepos,
+  'second-test': SecondTest,
   // !code: moduleExports // !end
 }>;
 // !code: funcs // !end
