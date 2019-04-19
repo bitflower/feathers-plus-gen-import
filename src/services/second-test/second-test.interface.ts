@@ -1,4 +1,3 @@
-
 // Define TypeScript interface for service `secondTest`. (Can be re-generated.)
 // !code: imports // !end
 // !code: init // !end
@@ -14,7 +13,7 @@ export interface SecondTestBase {
 // tslint:disable-next-line:no-empty-interface
 export interface SecondTest extends SecondTestBase {
   // !<DEFAULT> code: more
-  _id: any; // change if needed
+  _id: string; // change if needed
   // !end
 }
 
