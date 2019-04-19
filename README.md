@@ -1,61 +1,55 @@
-# json-schema
+# Importing JSON schemas into the schema of the service
 
-> Project json-schema
+## How to reproduce the error
 
-## About
+`feathers-plus generate service` => `second-test` => confirm all prompts
 
-This project uses [FeathersJS](http://feathersjs.com). An open source web framework for building modern real-time applications.
-
-## Getting Started
-
-Getting up and running is as easy as 1, 2, 3.
-
-1. Make sure you have [NodeJS](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
-2. Install your dependencies
-
-    ```
-    cd path/to/json-schema; npm install
-    ```
-
-3. Start your app
-
-    ```
-    npm start
-    ```
-
-## Testing
-
-Simply run `npm test` and all your tests in the `test/` directory will be run.
-
-## Scaffolding
-
-Feathers-plus has a powerful command line interface. Here are a few things it can do:
+## Error
 
 ```
-$ npm install -g @feathers-plus/cli          # Install Feathers-plus CLI
+Cannot parse schema: return {
+title: 'SecondTest',
+description: 'SecondTest database.',
 
-$ feathers-plus generate options             # Specify options for this app
-$ feathers-plus generate app                 # Generate scaffolding for app
-$ feathers generate authentication           # Generate authentication and user-entity service
-$ feathers-plus generate secret              # Generate a new secret for authentication
-$ feathers-plus generate service             # Generate a new service with its model
-$ feathers-plus generate graphql             # Generate a GraphQL endpoint for services
-$ feathers-plus generate all                 # Regenerate the entire app
-$ feathers-plus help                         # Show all commands
+  required: [
+    '_id',
+    'name'
+  ],
+  uniqueItemProperties: [
+
+  ],
+  properties: {
+    ...CoSchemas.atom.properties
+  },
+
+}
+
+in /Users/matthias/Documents/Projekte/bitflower/Case OS/Prototype/v0.2/_Knowledge/FeathersJS/json-schema/src/services/second-test/second-test.schema.
+
+events.js:167
+      throw er; // Unhandled 'error' event
+      ^
+
+ReferenceError: CoSchemas is not defined
+    at eval (eval at Object.keys.sort.forEach.serviceName (/Users/matthias/.nvm/versions/node/v10.15.0/lib/node_modules/@feathers-plus/cli/node_modules/@feathers-plus/generator-feathers-plus/lib/service-specs-combine.js:88:20), <anonymous>:15:8)
+    at Object.keys.sort.forEach.serviceName (/Users/matthias/.nvm/versions/node/v10.15.0/lib/node_modules/@feathers-plus/cli/node_modules/@feathers-plus/generator-feathers-plus/lib/service-specs-combine.js:88:54)
+    at Array.forEach (<anonymous>)
+    at serviceSpecsCombine (/Users/matthias/.nvm/versions/node/v10.15.0/lib/node_modules/@feathers-plus/cli/node_modules/@feathers-plus/generator-feathers-plus/lib/service-specs-combine.js:18:6)
+    at serviceSpecsExpand (/Users/matthias/.nvm/versions/node/v10.15.0/lib/node_modules/@feathers-plus/cli/node_modules/@feathers-plus/generator-feathers-plus/lib/service-specs-expand.js:22:50)
+    at new <anonymous> (/Users/matthias/.nvm/versions/node/v10.15.0/lib/node_modules/@feathers-plus/cli/node_modules/@feathers-plus/generator-feathers-plus/generators/writing/index.js:83:40)
+    at generatorWriting (/Users/matthias/.nvm/versions/node/v10.15.0/lib/node_modules/@feathers-plus/cli/node_modules/@feathers-plus/generator-feathers-plus/generators/writing/index.js:80:19)
+    at ServiceGenerator.writing (/Users/matthias/.nvm/versions/node/v10.15.0/lib/node_modules/@feathers-plus/cli/node_modules/@feathers-plus/generator-feathers-plus/generators/service/index.js:261:5)
+    at Object.<anonymous> (/Users/matthias/.nvm/versions/node/v10.15.0/lib/node_modules/@feathers-plus/cli/node_modules/yeoman-generator/lib/index.js:424:27)
+    at /Users/matthias/.nvm/versions/node/v10.15.0/lib/node_modules/@feathers-plus/cli/node_modules/run-async/index.js:25:25
+    at new Promise (<anonymous>)
+    at /Users/matthias/.nvm/versions/node/v10.15.0/lib/node_modules/@feathers-plus/cli/node_modules/run-async/index.js:24:19
+    at self.env.runLoop.add.completed (/Users/matthias/.nvm/versions/node/v10.15.0/lib/node_modules/@feathers-plus/cli/node_modules/yeoman-generator/lib/index.js:425:13)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+Emitted 'error' event at:
+    at Immediate.setImmediate (/Users/matthias/.nvm/versions/node/v10.15.0/lib/node_modules/@feathers-plus/cli/node_modules/yeoman-generator/lib/index.js:433:22)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
 ```
-
-## Help
-
-For more information on all the things you can do, visit [the generator](https://generator.feathers-plus.com/), [FeathersJS](http://docs.feathersjs.com) and [extensions](https://feathers-plus.github.io/).
-
-## Changelog
-
-__0.1.0__
-
-- Initial release
-
-## License
-
-Copyright (c) 2018
-
-Licensed under the [MIT license](LICENSE).
