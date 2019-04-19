@@ -1,6 +1,6 @@
-
 // Define the Feathers schema for service `secondTest`. (Can be re-generated.)
 // !code: imports
+import { CoSchemas } from '@case-os/schema';
 // !end
 // !code: init
 // !end
@@ -28,14 +28,9 @@ let schema = {
   // Fields in the model.
   properties: {
     // !code: schema_properties
-    _id: {
-      type: 'ID'
-    },
-    name: {
-      type: 'string'
-    }
+    ...CoSchemas.atom.properties
     // !end
-  },
+  }
   // !code: schema_more // !end
 };
 
@@ -63,16 +58,16 @@ let extensions = {
       // !<DEFAULT> code: graphql_add
       // __author__: { type: '__User__!', args: false, relation: { ourTable: '__authorId__', otherTable: '_id' } },
       // !end
-    },
+    }
     // !code: graphql_more // !end
-  },
+  }
 };
 
 // !code: more // !end
 
 let moduleExports = {
   schema,
-  extensions,
+  extensions
   // !code: moduleExports // !end
 };
 
